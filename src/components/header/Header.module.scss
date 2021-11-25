@@ -1,0 +1,95 @@
+@import "./../../style/variable.scss";
+@import "./../../style/mixin.scss";
+
+.header {
+  min-height: $headerHeight;
+  @include lg-screen {
+    padding: 2rem 9%;
+  }
+  @include md-screen {
+    padding: 2rem 9%;
+  }
+  @include sm-screen {
+    padding: 2rem 4%;
+  }
+  @include xs-screen {
+    padding: 1.5rem;
+  }
+
+  @include d_flex;
+  & .logo,
+  & .navLeft,
+  & .navRight {
+    flex: 1;
+  }
+  @include md-screen {
+    & .logo {
+      flex: 0;
+    }
+  }
+  & .iconMenu {
+    display: none;
+    @include sm-screen {
+      display: block;
+      flex: 1;
+      z-index: 1000;
+    }
+    & .icon {
+      @include sm-screen {
+        font-size: 2rem;
+        color: $primary;
+      }
+    }
+  }
+
+  & .navLeft {
+    font-size: 2rem;
+    color: $primary;
+    transition:  0.4s linear;
+    display: flex;
+    @include sm-screen {
+      position: absolute;
+      flex-direction: column;
+      top: 0;
+      left: -100%;
+      box-shadow: $navbox-sd;
+      height: 100vh;
+      padding: 5rem;
+      &_link {
+        display: block;
+        margin-top: 3rem;
+      }
+    }
+    &_active {
+      top: 0;
+      left: 0%;
+      width: 300px;
+      background-color: $colorNav;
+    }
+    &_link:not(:last-child) {
+      padding-right: 1rem;
+    }
+    &_link:not(:first-child) {
+      color: $dark;
+    }
+  }
+
+  & .logo {
+    text-align: center;
+    &_img {
+      width: 8rem;
+    }
+  }
+  & .navRight {
+    font-size: 2rem;
+    color: $primary;
+    text-align: end;
+    span:not(:last-child) {
+      padding-right: 3rem;
+      cursor: pointer;
+      @include sm-screen {
+        padding-right: 2rem;
+      }
+    }
+  }
+}

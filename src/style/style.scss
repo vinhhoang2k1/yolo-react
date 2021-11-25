@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+@import "./variable.scss";
+@import "./mixin.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* user-select: none; */
+  font-size: 62.5%;
+  background-color: var(--background-color);
+  @include sm-screen {
+    font-size: 55%;
+  }
+}
+body {
+  position: relative;
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+  font-family: "Roboto", sans-serif;
+  text-transform: capitalize;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}

@@ -1,0 +1,25 @@
+@mixin lg-screen {
+  @media only screen and (min-width: 1367px) {
+    @content;
+  }
+}
+@mixin md-screen {
+  @media only screen and (max-width: 1366px) {
+    @content;
+  }
+}
+@mixin sm-screen {
+  @media only screen and (max-width: 960px) {
+    @content;
+  }
+}
+@mixin xs-screen {
+  @media only screen and (max-width: 460px) {
+    @content;
+  }
+}
+@mixin d_flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
