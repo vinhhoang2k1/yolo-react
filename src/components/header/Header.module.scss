@@ -2,20 +2,8 @@
 @import "./../../style/mixin.scss";
 
 .header {
+  // z-index: 1000;
   min-height: $headerHeight;
-  @include lg-screen {
-    padding: 2rem 9%;
-  }
-  @include md-screen {
-    padding: 2rem 9%;
-  }
-  @include sm-screen {
-    padding: 2rem 4%;
-  }
-  @include xs-screen {
-    padding: 1.5rem;
-  }
-
   @include d_flex;
   & .logo,
   & .navLeft,
@@ -32,7 +20,7 @@
     @include sm-screen {
       display: block;
       flex: 1;
-      z-index: 1000;
+      z-index: 10001;
     }
     & .icon {
       @include sm-screen {
@@ -43,10 +31,15 @@
   }
 
   & .navLeft {
+    z-index: 10000;
     font-size: 2rem;
     color: $primary;
-    transition:  0.4s linear;
+    transition: 0.4s linear;
     display: flex;
+    &_link {
+      font-weight: 600;
+     
+    }
     @include sm-screen {
       position: absolute;
       flex-direction: column;
@@ -58,6 +51,7 @@
       &_link {
         display: block;
         margin-top: 3rem;
+        font-weight: 600;
       }
     }
     &_active {
@@ -71,6 +65,9 @@
     }
     &_link:not(:first-child) {
       color: $dark;
+      &:hover {
+        color: $primary;
+      }
     }
   }
 
@@ -82,14 +79,17 @@
   }
   & .navRight {
     font-size: 2rem;
-    color: $primary;
+    color: $dark;
     text-align: end;
     span:not(:last-child) {
       padding-right: 3rem;
-      cursor: pointer;
       @include sm-screen {
         padding-right: 2rem;
       }
+    }
+    & span:hover {
+      color: $primary;
+      cursor: pointer;
     }
   }
 }

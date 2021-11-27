@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
 @import "./variable.scss";
 @import "./mixin.scss";
 
@@ -20,11 +20,39 @@ body {
   position: relative;
   scroll-behavior: smooth;
   -webkit-tap-highlight-color: transparent;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Quicksand', sans-serif;
   text-transform: capitalize;
+}
+
+#root {
+  max-width: 1365px;
+  margin: auto;
+  // @include lg-screen {
+  //   padding: 2rem 9%;
+  // }
+  @include md-screen {
+    padding: 2rem 4%;
+  }
+  @include sm-screen {
+    padding: 2rem 4%;
+  }
+  @include xs-screen {
+    padding: 1.5rem;
+  }
+}
+.App {
+  overflow: hidden;
 }
 
 a {
   color: unset;
   text-decoration: none;
+}
+.swiper {
+  overflow: unset;
+
+}
+.swiper-pagination {
+  font-size: 1.6rem;
+  font-weight: 700;
 }
