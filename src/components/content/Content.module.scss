@@ -8,6 +8,20 @@
     text-align: center;
     font-weight: 700;
   }
+  &_banner {
+    width: 100%;
+    object-fit: cover;
+    padding: 3rem 0;
+    @include md-screen{
+      height: 300px;
+    }
+    @include mb-screen {
+      height: 350px;
+    }
+    @include xs-screen {
+      display: none;
+    }
+  }
 }
 .button {
   width: 100%;
@@ -16,19 +30,21 @@
   cursor: pointer;
 
   & span {
+    --height:1.6rem;
     color: $light;
     background-color: $primary;
     display: inline-block;
     margin: auto;
-    font-size: 1.6rem;
+    font-size: var(--height);
+    line-height: var(--height);
     font-weight: 500;
     padding: 1rem 2rem;
     transition: .2s linear;
-    border-radius: .5rem;
     &:hover {
       opacity: 0.9;
-      border-radius: 20px;
       box-shadow: $shadow;
     }
   }
 }
+
+

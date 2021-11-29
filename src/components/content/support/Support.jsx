@@ -26,7 +26,6 @@ const dataSP = [
 ];
 
 function Support() {
-  console.log(dataSP);
   return (
     <div className={classes.support}>
       {dataSP.map((data) => (

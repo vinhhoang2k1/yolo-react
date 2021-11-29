@@ -25,7 +25,7 @@ function Slide() {
       >
         {images.map((image) => {
           return (
-            <SwiperSlide>
+            <SwiperSlide >
               <div className={classes.slide}>
                 <div className={classes.slide_slogan}>
                   <h1>Polo nữ Pima cao cấp</h1>

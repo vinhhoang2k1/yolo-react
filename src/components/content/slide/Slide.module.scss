@@ -70,6 +70,7 @@
       z-index: 1001;
       @include lg-screen {
         top: -100px;
+        left: 25%;
       }
       @include md-screen {
         width: 100%;
@@ -83,6 +84,9 @@
         width: 400px;
         top: -20%;
         z-index: 11;
+        @include lg-screen {
+          width: 500px;
+        }
       }
       & span {
         display: block;

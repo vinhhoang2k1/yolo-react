@@ -1,0 +1,62 @@
+@import "./../../style/mixin.scss";
+@import "./../../style/variable.scss";
+
+.product {
+    display: grid;
+    padding: 5rem 3rem;
+    gap: 13rem;
+    grid-row-gap: 5rem;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    @include sm-screen {
+      gap: 8rem;
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    }
+    @include xs-screen {
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    }
+    &_item {
+      width: 100%;
+      &_img {
+        width: 100%;
+        height: 30rem;
+        object-fit: cover;
+        @include sm-screen {
+          height: 50rem;
+        }
+        @include xs-screen {
+            height: 30rem;
+        }
+      }
+      &_info {
+        width: 100%;
+        &_title {
+          color: $text-color;
+          text-align: center;
+          font-size: 1.7rem;
+          font-weight: 700;
+          padding: 1.5rem 0;
+        }
+        &_price {
+          --lineHeight: 2rem;
+          display: flex;
+          justify-content: space-between;
+          padding: 0 2rem;
+          & span:first-child {
+            color: $dark;
+            font-weight: 700;
+            font-size: var(--lineHeight);
+            line-height: var(--lineHeight);
+          }
+          & span:last-child {
+            color: $text-color;
+            font-size: 1.6rem;
+            line-height: var(--lineHeight);
+            text-decoration: line-through;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+  

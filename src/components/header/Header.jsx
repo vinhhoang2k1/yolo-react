@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import classes from "./Header.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -14,11 +14,21 @@ function Header() {
   const handleToggleMenu = () => {
     setMenu((p) => !p);
   };
-  console.log(menu);
+  const handleScroll = () => {
+    if (window.scrollY > 1 && window.scrollY < 2) {
+      setMenu(false);
+    }
+  };
+  if (menu === true) {
+    window.addEventListener("scroll", handleScroll);
+  } else {
+    window.removeEventListener("scroll", handleScroll);
+  }
+
   return (
     <div className={classes.header}>
       <div className={classes.iconMenu} onClick={handleToggleMenu}>
-        {menu == false ? (
+        {menu === false ? (
           <FontAwesomeIcon className={classes.icon} icon={faBars} />
         ) : (
           <FontAwesomeIcon className={classes.icon} icon={faTimes} />
@@ -26,7 +36,7 @@ function Header() {
       </div>
       <div
         className={
-          menu == false
+          menu === false
             ? classes.navLeft
             : `${classes.navLeft} ${classes.navLeft_active}`
         }

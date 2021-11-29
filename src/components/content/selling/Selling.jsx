@@ -8,7 +8,7 @@ import img3 from "./../../../images/products/product-03 (1).jpg";
 import img4 from "./../../../images/products/product-04 (1).jpg";
 
 //style
-import classes from "./Selling.module.scss";
+import classes from "./../Product.module.scss";
 
 //fake data
 const dataSelling = [
@@ -40,13 +40,13 @@ const dataSelling = [
 
 function Selling() {
   return (
-    <div className={classes.selling}>
+    <div className={classes.product}>
       {dataSelling.map((data) => (
-        <div className={classes.selling_item}>
-          <img src={data.image} alt="" className={classes.selling_item_img} />
-          <div className={classes.selling_item_info}>
-            <p className={classes.selling_item_info_title}>{data.title}</p>
-            <p className={classes.selling_item_info_price}>
+        <div  className={classes.product_item}>
+          <img src={data.image} alt="" className={classes.product_item_img} />
+          <div className={classes.product_item_info}>
+            <p className={classes.product_item_info_title}>{data.title}</p>
+            <p className={classes.product_item_info_price}>
               <span>{data.priceN}</span>
               <span>{data.priceO}</span>
             </p>

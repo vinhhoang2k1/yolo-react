@@ -6,7 +6,7 @@ import img1 from "./../../../images/products/product-01 (1).jpg";
 import img2 from "./../../../images/products/product-02 (1).jpg";
 import img3 from "./../../../images/products/product-03 (1).jpg";
 import img4 from "./../../../images/products/product-04 (1).jpg";
-const dataNew = [
+const dataPopular = [
   {
     image: img1,
     title: "quần jean 12",
@@ -56,10 +56,11 @@ const dataNew = [
     priceO: "399,000",
   },
 ];
-function New() {
+
+function Popular() {
   return (
-    <div className={classes.product}>
-      {dataNew.map((data) => (
+    <div  className={classes.product}>
+      {dataPopular.map((data) => (
         <div  className={classes.product_item}>
           <img src={data.image} alt="" className={classes.product_item_img} />
           <div className={classes.product_item_info}>
@@ -76,4 +77,4 @@ function New() {
   );
 }
 
-export default New;
+export default Popular;

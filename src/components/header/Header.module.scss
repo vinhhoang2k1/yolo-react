@@ -2,7 +2,6 @@
 @import "./../../style/mixin.scss";
 
 .header {
-  // z-index: 1000;
   min-height: $headerHeight;
   @include d_flex;
   & .logo,
@@ -62,6 +61,11 @@
     }
     &_link:not(:last-child) {
       padding-right: 1rem;
+    
+      @include lg-screen {
+      padding-right: 3rem;
+
+      }
     }
     &_link:not(:first-child) {
       color: $dark;
@@ -81,6 +85,7 @@
     font-size: 2rem;
     color: $dark;
     text-align: end;
+    z-index: 2000;
     span:not(:last-child) {
       padding-right: 3rem;
       @include sm-screen {
