@@ -1,0 +1,18 @@
+@import "../../../style/variable.scss";
+@import "../../../style/mixin.scss";
+
+.products__content {
+  display: flex;
+  &__filter {
+    position: relative;
+    flex: 1;
+    padding: 5rem 0;
+    @include xs-screen {
+      position: absolute;
+      clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    }
+  }
+  &__list {
+    flex: 3;
+  }
+}

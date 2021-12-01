@@ -48,6 +48,9 @@ a {
   color: unset;
   text-decoration: none;
 }
+a.active {
+  color: $primary;
+}
 .swiper {
   overflow: unset;
 

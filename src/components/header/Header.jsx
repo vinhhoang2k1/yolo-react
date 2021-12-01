@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
+
 import classes from "./Header.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -38,21 +40,38 @@ function Header() {
         className={
           menu === false
             ? classes.navLeft
-            : `${classes.navLeft} ${classes.navLeft_active}`
+            : ` ${classes.navLeft} ${classes.navLeft_active}`
         }
       >
-        <a href="" className={classes.navLeft_link}>
+        <NavLink
+        activeClassName={classes.active}
+          axact={true}
+          to="/"
+          className={classes.navLeft_link}
+        >
           trang chủ
-        </a>
-        <a href="" className={classes.navLeft_link}>
+        </NavLink>
+        <NavLink
+        activeClassName={classes.active}
+          to="/Products"
+          className={classes.navLeft_link}
+        >
           sản phẩm
-        </a>
-        <a href="" className={classes.navLeft_link}>
+        </NavLink>
+        <NavLink
+        activeClassName={classes.active}
+          to="/"
+          className={classes.navLeft_link}
+        >
           phụ kiện
-        </a>
-        <a href="" className={classes.navLeft_link}>
+        </NavLink>
+        <NavLink
+        activeClassName={classes.active}
+          to="/"
+          className={classes.navLeft_link}
+        >
           liên hệ
-        </a>
+        </NavLink>
       </div>
       <div className={classes.logo}>
         <img src={logo} alt="" className={classes.logo_img} />

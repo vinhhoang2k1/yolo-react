@@ -2,6 +2,7 @@
 @import "./../../style/mixin.scss";
 
 .header {
+  
   min-height: $headerHeight;
   @include d_flex;
   & .logo,
@@ -28,17 +29,14 @@
       }
     }
   }
-
+  & .navLeft .active {
+    color: $primary;
+  }
   & .navLeft {
     z-index: 10000;
     font-size: 2rem;
-    color: $primary;
     transition: 0.4s linear;
     display: flex;
-    &_link {
-      font-weight: 600;
-     
-    }
     @include sm-screen {
       position: absolute;
       flex-direction: column;
@@ -61,18 +59,31 @@
     }
     &_link:not(:last-child) {
       padding-right: 1rem;
-    
-      @include lg-screen {
-      padding-right: 3rem;
 
+      @include lg-screen {
+        padding-right: 3rem;
       }
     }
-    &_link:not(:first-child) {
+    &_link {
+      font-weight: 600;
+      &_active {
+        font-size: 2rem;
+        color: $primary;
+        font-weight: 600;
+        padding-right: 1rem;
+
+        @include lg-screen {
+          padding-right: 3rem;
+        }
+      }
       color: $dark;
       &:hover {
         color: $primary;
       }
     }
+  }
+  & .navLeft_link.active {
+    color: $primary;
   }
 
   & .logo {
