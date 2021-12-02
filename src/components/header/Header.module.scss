@@ -1,6 +1,9 @@
 @import "./../../style/variable.scss";
 @import "./../../style/mixin.scss";
 
+.active {
+  color: $primary;
+}
 .header {
   
   min-height: $headerHeight;

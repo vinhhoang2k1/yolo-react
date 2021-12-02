@@ -45,6 +45,7 @@ function Header() {
       >
         <NavLink
         activeClassName={classes.active}
+    
           axact={true}
           to="/"
           className={classes.navLeft_link}
@@ -60,7 +61,7 @@ function Header() {
         </NavLink>
         <NavLink
         activeClassName={classes.active}
-          to="/"
+          to="/Detail"
           className={classes.navLeft_link}
         >
           phụ kiện

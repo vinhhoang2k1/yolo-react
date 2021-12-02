@@ -3,13 +3,37 @@
 
 .products__content {
   display: flex;
+  position: relative;
+  &__icon-filter {
+    display: none;
+    @include xs-screen {
+      display: block;
+      --size: 2.5rem;
+      position: absolute;
+      z-index: 100;
+      top: 0;
+      width: var(--size);
+      height: var(--size);
+      & svg {
+        width: 100%;
+        height: 100%;
+        color: $primary;
+      }
+    }
+  }
   &__filter {
     position: relative;
     flex: 1;
     padding: 5rem 0;
+    transition: all 0.3s ease-in-out;
+    height: 100vh;
     @include xs-screen {
+      background-color: $light;
       position: absolute;
       clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+      &.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      }
     }
   }
   &__list {

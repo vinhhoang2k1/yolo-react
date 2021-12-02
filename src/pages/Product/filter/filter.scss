@@ -6,7 +6,14 @@ li {
 }
 .filter {
   padding: 2rem;
-
+  &__btn-delete {
+    background-color: $primary;
+    color: $light;
+    padding: .5rem 1rem;
+    font-size: 2.2rem;
+    font-weight: 500;
+    cursor: pointer;
+  }
   &-item {
     padding: 1rem 0;
     &__heading {
@@ -19,14 +26,15 @@ li {
       font-size: 1.4rem;
       color: $text-color;
       font-weight: 500;
-      & input {
-        outline: none;
-        border: none;
-        border-radius: 50%;
+      & input[type="checkbox"] {
+        cursor: pointer;
+        width: 1.4rem;
+        height: 1.4rem;
       }
       & label {
         padding-left: 1rem;
       }
     }
+    
   }
 }
