@@ -7,6 +7,7 @@
     padding: 5rem 3rem;
     gap: 13rem;
     grid-row-gap: 5rem;
+    position: relative;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     @include sm-screen {
       gap: 8rem;
@@ -15,6 +16,16 @@
     @include xs-screen {
       gap: 2rem;
       grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    }
+    &__title {
+      position: absolute;
+      top: 0;
+      left: 0;
+      line-height: 3rem;
+      width: 100%;;
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: center;
     }
     &_item {
       width: 100%;

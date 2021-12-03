@@ -41,8 +41,8 @@ const dataSelling = [
 function Selling() {
   return (
     <div className={classes.product}>
-      {dataSelling.map((data) => (
-        <div  className={classes.product_item}>
+      {dataSelling.map((data, index) => (
+        <div key={index} className={classes.product_item}>
           <img src={data.image} alt="" className={classes.product_item_img} />
           <div className={classes.product_item_info}>
             <p className={classes.product_item_info_title}>{data.title}</p>
@@ -50,7 +50,7 @@ function Selling() {
               <span>{data.priceN}</span>
               <span>{data.priceO}</span>
             </p>
-            <Button />
+            <Button content='mua ngay' />
           </div>
         </div>
       ))}

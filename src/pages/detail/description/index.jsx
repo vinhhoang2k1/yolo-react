@@ -1,20 +1,43 @@
-import React from "react";
-import './description.scss'
+import { useState } from "react";
+import Button from "../../../components/content/Button";
+
+import "./description.scss";
 import img1 from "./../../../images/products/product-01 (1).jpg";
 import img2 from "./../../../images/products/product-01 (2).jpg";
 
-
-
-function index() {
+function Index() {
+  const [status, setStatus] = useState(false);
+  const [price, setPrice] = useState(1);
+  const handleCountPriceD = () => {
+    if (price > 1) setPrice((p) => p - 1);
+  };
+  const handleCountPriceU = () => {
+    setPrice((p) => p + 1);
+  };
+  const handleStatus = () => {
+    setStatus((p) => !p);
+  };
   return (
     <div className="detail-product">
       <div className="detail-product__wrap">
         <div className="detail-product__wrap__slide-1">
-          <img src={img1} alt="" className="detail-product__wrap__slide-1__img" />
-          <img src={img2} alt="" className="detail-product__wrap__slide-1__img" />
+          <img
+            src={img1}
+            alt=""
+            className="detail-product__wrap__slide-1__img"
+          />
+          <img
+            src={img2}
+            alt=""
+            className="detail-product__wrap__slide-1__img"
+          />
         </div>
         <div className="detail-product__wrap__slide-2">
-          <img src={img1} alt="" className="detail-product__wrap__slide-2__img" />
+          <img
+            src={img1}
+            alt=""
+            className="detail-product__wrap__slide-2__img"
+          />
         </div>
         <div className="detail-product__wrap__slide-3">
           <h2 className="detail-product__wrap__slide-3__title">
@@ -36,19 +59,19 @@ function index() {
           </div>
           <p className="detail-product__wrap__slide-3__labe">số lượng</p>
           <div className="detail-product__wrap__slide-3__quantity">
-            <span>-</span>
-            <span>1</span>
-            <span>+</span>
+            <span onClick={handleCountPriceD}>-</span>
+            <span>{price}</span>
+            <span onClick={handleCountPriceU}>+</span>
           </div>
           <div className="detail-product__wrap__slide-3-list__btn">
-            <span>thêm vào giỏ hàng</span>
-            <span>mua ngay</span>
+            <Button content="thêm vào giỏ" />
+            <Button content="mua ngay" />
           </div>
         </div>
       </div>
-      {/* <div className="detail-product__description">
+      <div className={`detail-product__description ${status ? " active" : ""}`}>
         <h1 className="detail-product__description__title">
-          chi tiết sản phẩm{" "}
+          chi tiết sản phẩm
         </h1>
         <p className="detail-product__description__item">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis est
@@ -88,9 +111,17 @@ function index() {
           soluta similique vel harum, inventore nulla corporis ut officia
           provident cumque obcaecati exercitationem.
         </p>
-      </div> */}
+        <span
+          className={`detail-product__description__btn-hs ${
+            status ? " active" : ""
+          }`}
+          onClick={handleStatus}
+        >
+          {status ? "thu gọn" : "xem thêm "}
+        </span>
+      </div>
     </div>
   );
 }
 
-export default index;
+export default Index;

@@ -5,7 +5,6 @@
   color: $primary;
 }
 .header {
-  
   min-height: $headerHeight;
   @include d_flex;
   & .logo,

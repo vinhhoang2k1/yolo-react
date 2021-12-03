@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 import classes from "./Header.module.scss";
@@ -17,15 +17,14 @@ function Header() {
     setMenu((p) => !p);
   };
   const handleScroll = () => {
-    if (window.scrollY > 1 && window.scrollY < 2) {
+    if (window.scrollY > 1 && window.scrollY < 3) {
       setMenu(false);
+      console.log("scroll");
     }
   };
-  if (menu === true) {
-    window.addEventListener("scroll", handleScroll);
-  } else {
-    window.removeEventListener("scroll", handleScroll);
-  }
+  console.log(menu);
+  if (menu === true) window.addEventListener("scroll", handleScroll);
+  else window.removeEventListener("scroll", handleScroll);
 
   return (
     <div className={classes.header}>
@@ -43,34 +42,16 @@ function Header() {
             : ` ${classes.navLeft} ${classes.navLeft_active}`
         }
       >
-        <NavLink
-        activeClassName={classes.active}
-    
-          axact={true}
-          to="/"
-          className={classes.navLeft_link}
-        >
+        <NavLink axact={true} to="/" className={classes.navLeft_link}>
           trang chủ
         </NavLink>
-        <NavLink
-        activeClassName={classes.active}
-          to="/Products"
-          className={classes.navLeft_link}
-        >
+        <NavLink to="/Products" className={classes.navLeft_link}>
           sản phẩm
         </NavLink>
-        <NavLink
-        activeClassName={classes.active}
-          to="/Detail"
-          className={classes.navLeft_link}
-        >
+        <NavLink to="/Detail" className={classes.navLeft_link}>
           phụ kiện
         </NavLink>
-        <NavLink
-        activeClassName={classes.active}
-          to="/"
-          className={classes.navLeft_link}
-        >
+        <NavLink to="/" className={classes.navLeft_link}>
           liên hệ
         </NavLink>
       </div>

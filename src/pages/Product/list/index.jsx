@@ -68,7 +68,7 @@ function index() {
               <span>{data.priceO}</span>
               <span>{data.priceN}</span>
             </p>
-            <Button />
+            <Button content='mua ngay' />
           </div>
         </div>
       ))}

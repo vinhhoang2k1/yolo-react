@@ -28,8 +28,8 @@ const dataSP = [
 function Support() {
   return (
     <div className={classes.support}>
-      {dataSP.map((data) => (
-        <div className={classes.support_item}>
+      {dataSP.map((data, index) => (
+        <div key={index} className={classes.support_item}>
           <div className={classes.support_item_icon}>{data.icon}</div>
           <div className={classes.support_item_box}>
               <h2>{data.title}</h2>

@@ -59,6 +59,7 @@ const dataNew = [
 ];
 function index() {
   return <div className="suggest">
+      <h2 className="suggest__title">khám phá thêm </h2>
       {dataNew.map((data) => (
         <div  className='product_item'>
           <img src={data.image} alt="" className='product_item_img' />
@@ -68,7 +69,7 @@ function index() {
               <span>{data.priceN}</span>
               <span>{data.priceO}</span>
             </p>
-            <Button />
+            <Button content='mua ngay' />
           </div>
         </div>
       ))}

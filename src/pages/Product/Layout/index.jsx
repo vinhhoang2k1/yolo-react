@@ -17,6 +17,7 @@ function Index() {
       setFilter(false);
     }
   };
+  console.log("scroll filter");
   if (filter === true) window.addEventListener("scroll", handleHiddenFilter);
   else window.removeEventListener("scroll", handleHiddenFilter);
 

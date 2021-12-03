@@ -23,9 +23,10 @@ function Slide() {
         navigation={true}
         className="mySwiper"
       >
-        {images.map((image) => {
+        {images.map((image, index) => {
           return (
-            <SwiperSlide >
+            < >
+            <SwiperSlide key={index} >
               <div className={classes.slide}>
                 <div className={classes.slide_slogan}>
                   <h1>Polo nữ Pima cao cấp</h1>
@@ -48,6 +49,7 @@ function Slide() {
                 </div>
               </div>
             </SwiperSlide>
+            </>
           );
         })}
       </Swiper>
